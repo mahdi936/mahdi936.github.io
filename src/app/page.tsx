@@ -1,14 +1,14 @@
 import HomeSection from 'src/sections/home/home';
 import { Root } from 'src/types/types';
 export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+export const revalidate = 1;
 
 // ----------------------------------------------------------------------
 
 export default async function HomePage() {
-  const response = await fetch('https://mahdi936-github-io.vercel.app/api/talair');
+  const response = await fetch('http://localhost:8083/api/talair', { cache: 'no-cache' });
   const data = await response.json() as Root;
 
 
-  return <HomeSection price={Number(data.current.geram18.p.replaceAll(',', '')) / 10} />
+  return <HomeSection price={data.price * 1000} />
 }

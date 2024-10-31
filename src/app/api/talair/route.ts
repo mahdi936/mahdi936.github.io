@@ -3,11 +3,12 @@
 import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+export const revalidate = 1;
 export async function GET() {
   try {
-    const response = await fetch('https://call1.tgju.org/ajax.json', {
+    const response = await fetch('https://api.talasea.ir/api/market/getGoldPrice', {
       method: 'GET',
+      cache:"no-cache"
     });
 
     if (!response.ok) {
