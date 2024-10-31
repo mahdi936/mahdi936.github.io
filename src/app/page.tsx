@@ -6,7 +6,7 @@ export const revalidate = 1;
 // ----------------------------------------------------------------------
 
 export default async function HomePage() {
-  const response = await fetch('http://localhost:8083/api/talair', { cache: 'no-cache' });
+  const response = await fetch('https://mahdi936-github-io.vercel.app/api/talair', { cache: 'no-cache' });
   const data = await response.json() as Root;
 
 
