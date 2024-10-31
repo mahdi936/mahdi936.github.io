@@ -31,8 +31,8 @@ export default function HomeSection(props: props) {
         price: Yup.number().required('قیمت اجباری است!').min(1, 'قیمت اجباری است!'),
         weight: Yup.number().required('وزن اجباری است!').min(1, 'وزن اجباری است!'),
         wagePercentage: Yup.number().required('اجرت اجباری است!').min(1, 'اجرت اجباری است!'),
-        profitPercentage: Yup.number().required('اجرت اجباری است!').min(1, 'اجرت اجباری است!'),
-        taxPercentage: Yup.number().required('اجرت اجباری است!').min(1, 'اجرت اجباری است!'),
+        profitPercentage: Yup.number().required('اجرت اجباری است!').min(1, 'سود اجباری است!'),
+        taxPercentage: Yup.number().required('اجرت اجباری است!').min(1, 'مالیات اجباری است!'),
     });
 
     const methods = useForm({
