@@ -6,11 +6,9 @@ export const revalidate = 0;
 // ----------------------------------------------------------------------
 
 export default async function HomePage() {
-  const response = await fetch('http://localhost:8083/api/talair'); // Use the appropriate API route
+  const response = await fetch('https://mahdi936-github-io.vercel.app/api/talair');
   const data = await response.json() as Root;
 
 
-
-
-  return <HomeSection price={Number(data.current.geram18.p.replaceAll(',', ''))} />
+  return <HomeSection price={Number(data.current.geram18.p.replaceAll(',', '')) / 10} />
 }
